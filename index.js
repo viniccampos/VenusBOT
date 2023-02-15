@@ -2,7 +2,7 @@ const { Client, Collection, Events, GatewayIntentBits, InteractionType, Activity
 const path = require('node:path');
 const client = new Client({ intents: ["Guilds", "GuildMembers", "MessageContent", "GuildMessages"] });
 require('dotenv').config()
-module.exports = Client;
+module.exports = client;
 
 client.on(Events.InteractionCreate, interaction => {
     if (interaction.type === InteractionType.ApplicationCommand) {
