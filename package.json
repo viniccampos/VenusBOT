@@ -1,0 +1,24 @@
+{
+  "name": "venusbot",
+  "version": "1.0.0",
+  "description": "a discord bot to venus server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniccampos/VenusBOT.git"
+  },
+  "author": "Vinicius Campos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viniccampos/VenusBOT/issues"
+  },
+  "homepage": "https://github.com/viniccampos/VenusBOT#readme",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "fs": "^0.0.1-security"
+  }
+}
