@@ -1,6 +1,6 @@
 {
   "name": "venusbot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a discord bot to venus server",
   "main": "index.js",
   "scripts": {
