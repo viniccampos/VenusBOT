@@ -1,33 +1,32 @@
-const { ActivityType } = require("discord.js");
-const Discord = require("discord.js");
-const Client = new Discord.Client({ intents: ["Guilds", "GuildMembers", "MessageContent", "GuildMessages"] });
-const Config = require("./config.json");
-module.exports = Client;
+const { Client, Collection, Events, GatewayIntentBits, InteractionType, ActivityType } = require('discord.js');
+const path = require('node:path');
+const client = new Client({ intents: ["Guilds", "GuildMembers", "MessageContent", "GuildMessages"] });
+require('dotenv').config()
+module.exports = client;
 
-Client.on('interactionCreate', (interaction) => {
+client.on(Events.InteractionCreate, interaction => {
+    if (interaction.type === InteractionType.ApplicationCommand) {
 
-    if (interaction.type === Discord.InteractionType.ApplicationCommand) {
-
-        const cmd = Client.slashCommands.get(interaction.commandName);
+        const cmd = client.slashCommands.get(interaction.commandName);
 
         if (!cmd) return interaction.reply(`Error`);
 
         interaction["member"] = interaction.guild.members.cache.get(interaction.user.id);
 
-        cmd.run(Client, interaction)
+        cmd.run(client, interaction)
 
     }
 })
 
-Client.on('ready', () => {
-    console.log(`${Client.user.username} está online!`);
+client.on('ready', () => {
+    console.log(`${client.user.username} está online!`);
 
-    Client.user.setActivity({
+    client.user.setActivity({
         name: 'Em Desenvolvimento',
         type: ActivityType.Playing
     });
 });
 
-Client.slashCommands = new Discord.Collection();
-require('./handler')(Client);
-Client.login(Config.token);
+client.slashCommands = new Collection();
+require('./src/handler')(client);
+client.login(process.env.ACCESS_TOKEN);

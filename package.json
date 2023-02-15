@@ -1,6 +1,6 @@
 {
   "name": "venusbot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a discord bot to venus server",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/viniccampos/VenusBOT#readme",
   "dependencies": {
     "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
     "fs": "^0.0.1-security"
   },
   "engines": {
