@@ -1,11 +1,12 @@
 {
   "name": "venusbot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a discord bot to venus server",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -21,8 +22,10 @@
     "axios": "^1.3.3",
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
     "express": "^4.18.2",
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "nodemon": "^2.0.20"
   },
   "engines": {
     "node": "18.14.0",
